@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countries</title>
+    <link href="/css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="bg-gray-800 p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="text-white text-2xl">Countries</a>
+        <div class="flex items-center">
+          <a href="/about" class="text-white mr-4">About</a>
+          <details class="relative">
+            <summary class="text-white cursor-pointer flex items-center">
+              Region <span class="ml-2"> ▼</span>
+            </summary>
+            <ul class="absolute hidden bg-gray-800 text-white mt-2">
+              <li>
+                <a
+                  class="block px-4 py-2 hover:bg-gray-700"
+                  href="/countries?region=africa"
+                  >Africa</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-4 py-2 hover:bg-gray-700"
+                  href="/countries?region=americas"
+                  >Americas</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-4 py-2 hover:bg-gray-700"
+                  href="/countries?region=asia"
+                  >Asia</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-4 py-2 hover:bg-gray-700"
+                  href="/countries?region=europe"
+                  >Europe</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block px-4 py-2 hover:bg-gray-700"
+                  href="/countries?region=oceania"
+                  >Oceania</a
+                >
+              </li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mx-auto mt-8">
+      <div class="hero bg-blue-500 text-white p-8 rounded-lg text-center">
+        <h1 class="text-4xl">Welcome</h1>
+        <p class="mt-4">
+          Setting sail from North America to uncover the world’s wonders!
+        </p>
+        <a href="/countries" class="btn mt-4">EXPLORE NOW</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <!-- Card 1 -->
+        <div class="card bg-white shadow-md rounded-lg overflow-hidden">
+          <figure>
+            <img
+              class="w-full"
+              src="https://flagcdn.com/w320/ca.png"
+              alt="Canada"
+            />
+          </figure>
+          <div class="p-4">
+            <h2 class="text-xl font-bold">Canada</h2>
+            <div class="flex items-center mt-2">
+              <img
+                src="https://mainfacts.com/media/images/coats_of_arms/ca.png"
+                alt="Coat of Arms"
+                class="w-12 h-12 mr-4"
+              />
+              <p>
+                <b>Capital:</b> Ottawa<br /><b>Languages:</b> English, French<br /><b
+                  >Population:</b
+                >
+                38,005,238<br /><b>Area:</b> 9,984,670 km<sup>2</sup>
+              </p>
+            </div>
+            <a href="/countries/124" class="btn mt-4">Learn More</a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card bg-white shadow-md rounded-lg overflow-hidden">
+          <figure>
+            <img
+              class="w-full"
+              src="https://flagcdn.com/w320/ph.png"
+              alt="Philippines"
+            />
+          </figure>
+          <div class="p-4">
+            <h2 class="text-xl font-bold">Philippines</h2>
+            <div class="flex items-center mt-2">
+              <img
+                src="https://mainfacts.com/media/images/coats_of_arms/ph.png"
+                alt="Coat of Arms"
+                class="w-12 h-12 mr-4"
+              />
+              <p>
+                <b>Capital:</b> Manila<br /><b>Languages:</b> Filipino,
+                English<br /><b>Population:</b> 109,581,085<br /><b>Area:</b>
+                342,353 km<sup>2</sup>
+              </p>
+            </div>
+            <a href="/countries/608" class="btn mt-4">Learn More</a>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card bg-white shadow-md rounded-lg overflow-hidden">
+          <figure>
+            <img
+              class="w-full"
+              src="https://flagcdn.com/w320/ae.png"
+              alt="united Arab Emirates"
+            />
+          </figure>
+          <div class="p-4">
+            <h2 class="text-xl font-bold">United Arab Emirates</h2>
+            <div class="flex items-center mt-2">
+              <img
+                src="https://mainfacts.com/media/images/coats_of_arms/ae.png"
+                alt="Coat of Arms"
+                class="w-12 h-12 mr-4"
+              />
+              <p>
+                <b>Capital:</b> Abu Dhabi<br /><b>Languages:</b> Arabic<br /><b
+                  >Population:</b
+                >
+                9,890,400<br /><b>Area:</b> 83,600 km<sup>2</sup>
+              </p>
+            </div>
+            <a href="/countries/784" class="btn mt-4">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Dropdown menu functionality
+      document.querySelector("summary").addEventListener("click", function () {
+        this.nextElementSibling.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

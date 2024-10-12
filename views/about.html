@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>About</title>
+    <style>
+        details[open] summary span {
+            transform: rotate(180deg);
+        }
+        summary span {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-white text-2xl">Countries</a>
+            <div class="flex items-center">
+                <a href="/about" class="text-white mr-4">About</a>
+                <details class="relative">
+                    <summary class="text-white cursor-pointer flex items-center">Region <span class="ml-2">▼</span></summary>
+                    <ul class="absolute hidden bg-gray-800 text-white mt-2">
+                        <li><a class="block px-4 py-2 hover:bg-gray-700" href="/countries?region=africa">Africa</a></li>
+                        <li><a class="block px-4 py-2 hover:bg-gray-700" href="/countries?region=americas">Americas</a></li>
+                        <li><a class="block px-4 py-2 hover:bg-gray-700" href="/countries?region=asia">Asia</a></li>
+                        <li><a class="block px-4 py-2 hover:bg-gray-700" href="/countries?region=europe">Europe</a></li>
+                        <li><a class="block px-4 py-2 hover:bg-gray-700" href="/countries?region=oceania">Oceania</a></li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8">
+        <div class="hero bg-blue-500 text-white p-8 rounded-lg text-center">
+            <h1 class="text-4xl">About</h1>
+            <p class="mt-4">“Get to know the creative mind behind the code – your designer and developer!”</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <!-- Left Column -->
+            <div>
+                <img src="https://www.istats.com/wp-content/uploads/2018/01/best-website-builder.jpeg" alt="Your Image" class="w-full h-auto rounded-lg">
+            </div>
+            <!-- Right Column -->
+            <div>
+                <h2 class="text-2xl font-bold">Honer Mina</h2>
+                <p class="mt-4">
+                  As a passionate developer, I find inspiration in the rhythm of music and the storytelling of movies, which fuel my creativity and drive. When I’m not immersed in coding, I seek solace in the serene beauty of the sea, where the gentle waves and tranquil horizon offer a perfect escape. My love for technology is matched only by my curiosity to explore new places and ideas, always striving to blend innovation with a touch of artistry in every project I undertake. Whether it’s crafting elegant code or enjoying a peaceful moment by the shore, I embrace each experience with enthusiasm and a zest for life.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dropdown menu functionality
+        document.querySelector('summary').addEventListener('click', function() {
+            this.nextElementSibling.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
