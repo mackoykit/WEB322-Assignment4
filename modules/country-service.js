@@ -23,7 +23,7 @@ function initialize() {
     try {
       countries = countryData.map((country) => {
         const subRegionObj = subRegionData.find(
-          (subRegion) => subRegion.id === country.subRegionId
+          (subRegion) => subRegion.id === country.subRegionId,
         );
         return {
           ...country,
@@ -69,7 +69,7 @@ function getCountriesBySubRegion(subRegion) {
         country.subRegionObj &&
         country.subRegionObj.subRegion
           .toLowerCase()
-          .includes(lowerCaseSubRegion)
+          .includes(lowerCaseSubRegion),
     );
 
     if (filteredCountries.length > 0) {
@@ -87,7 +87,7 @@ function getCountriesByRegion(region) {
     const filteredCountries = countries.filter(
       (country) =>
         country.subRegionObj &&
-        country.subRegionObj.region.toLowerCase().includes(lowerCaseRegion)
+        country.subRegionObj.region.toLowerCase().includes(lowerCaseRegion),
     );
 
     if (filteredCountries.length > 0) {

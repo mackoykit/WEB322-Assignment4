@@ -6,7 +6,7 @@
  *
  *  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
  *
- *  Name: ____Honer Mina____ Student ID: ___142518232___ Date: _____30/09/2024___
+ *  Name: ____Honer Mina____ Student ID: ___142518232___ Date: _____14/10/2024___
  *
  ********************************************************************************/
 
@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + "/public"));
 
-app.set('views', __dirname + '/views');
+app.set("views", __dirname + "/views");
 
 // GET "/" route
 app.get("/", (req, res) => {
