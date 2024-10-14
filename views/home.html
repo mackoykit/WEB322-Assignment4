@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,67 +6,80 @@
     <title>Countries</title>
     <link href="/css/main.css" rel="stylesheet" />
   </head>
-  <body>
-    <nav class="bg-gray-800 p-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <a href="/" class="text-white text-2xl">Countries</a>
-        <div class="flex items-center">
-          <a href="/about" class="text-white mr-4">About</a>
-          <details class="relative">
-            <summary class="text-white cursor-pointer flex items-center">
-              Region <span class="ml-2"> ▼</span>
-            </summary>
-            <ul class="absolute hidden bg-gray-800 text-white mt-2">
-              <li>
-                <a
-                  class="block px-4 py-2 hover:bg-gray-700"
-                  href="/countries?region=africa"
-                  >Africa</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-4 py-2 hover:bg-gray-700"
-                  href="/countries?region=americas"
-                  >Americas</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-4 py-2 hover:bg-gray-700"
-                  href="/countries?region=asia"
-                  >Asia</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-4 py-2 hover:bg-gray-700"
-                  href="/countries?region=europe"
-                  >Europe</a
-                >
-              </li>
-              <li>
-                <a
-                  class="block px-4 py-2 hover:bg-gray-700"
-                  href="/countries?region=oceania"
-                  >Oceania</a
-                >
-              </li>
-            </ul>
-          </details>
+  <body tabindex="-1">
+    <div class="navbar bg-base-100">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl" href="/">Countries</a>
+      </div>
+      <div class="navbar-center hidden sm:flex">
+        <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost sm:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </label>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li><a href="/about">About</a></li>
+            <li>
+              <details>
+                <summary>Region</summary>
+                <ul class="p-2 bg-base-100">
+                  <li><a href="/countries?region=Africa">Africa</a></li>
+                  <li><a href="/countries?region=Americas">Americas</a></li>
+                  <li><a href="/countries?region=Asia">Asia</a></li>
+                  <li><a href="/countries?region=Europe">Europe</a></li>
+                  <li><a href="/countries?region=Oceania">Oceania</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
         </div>
       </div>
-    </nav>
-
-    <div class="container mx-auto mt-8">
-      <div class="hero bg-blue-500 text-white p-8 rounded-lg text-center">
-        <h1 class="text-4xl">Welcome</h1>
-        <p class="mt-4">
-          Setting sail from North America to uncover the world’s wonders!
-        </p>
-        <a href="/countries" class="btn mt-4">EXPLORE NOW</a>
+      <div class="navbar-center hidden sm:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li><a href="/about">About</a></li>
+          <li>
+            <details>
+              <summary>Region</summary>
+              <ul class="bg-base-100 rounded-t-none p-2">
+                <li><a href="/countries?region=Africa">Africa</a></li>
+                <li><a href="/countries?region=Americas">Americas</a></li>
+                <li><a href="/countries?region=Asia">Asia</a></li>
+                <li><a href="/countries?region=Europe">Europe</a></li>
+                <li><a href="/countries?region=Oceania">Oceania</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
       </div>
-
+    </div>
+    <div class="container mx-auto">
+      <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">Welcome</h1>
+            <p class="py-6">
+              From North America, we start to explore the countries in the
+              world.
+            </p>
+            <a href="/countries" class="btn btn-primary">Explore Now</a>
+          </div>
+        </div>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
         <!-- Card 1 -->
         <div class="card bg-white shadow-md rounded-lg overflow-hidden">
@@ -86,9 +99,8 @@
                 class="w-12 h-12 mr-4"
               />
               <p>
-                <b>Capital:</b> Ottawa<br /><b>Languages:</b> English, French<br /><b
-                  >Population:</b
-                >
+                <b>Capital:</b> Ottawa<br /><b>Languages:</b> English, French<br />
+                <b>Population:</b>
                 38,005,238<br /><b>Area:</b> 9,984,670 km<sup>2</sup>
               </p>
             </div>
@@ -114,8 +126,8 @@
               />
               <p>
                 <b>Capital:</b> Manila<br /><b>Languages:</b> Filipino,
-                English<br /><b>Population:</b> 109,581,085<br /><b>Area:</b>
-                342,353 km<sup>2</sup>
+                English<br /><b>Population:</b> 109,581,085<br /><b>Area:</b
+                >342,353 km<sup>2</sup>
               </p>
             </div>
             <a href="/countries/608" class="btn mt-4">Learn More</a>
@@ -139,10 +151,10 @@
                 class="w-12 h-12 mr-4"
               />
               <p>
-                <b>Capital:</b> Abu Dhabi<br /><b>Languages:</b> Arabic<br /><b
-                  >Population:</b
+                <b>Capital:</b> Abu Dhabi<br /><b>Languages:</b> Arabic<br />
+                <b>Population:</b>9,890,400<br /><b>Area:</b> 83,600 km<sup
+                  >2</sup
                 >
-                9,890,400<br /><b>Area:</b> 83,600 km<sup>2</sup>
               </p>
             </div>
             <a href="/countries/784" class="btn mt-4">Learn More</a>
@@ -150,12 +162,5 @@
         </div>
       </div>
     </div>
-
-    <script>
-      // Dropdown menu functionality
-      document.querySelector("summary").addEventListener("click", function () {
-        this.nextElementSibling.classList.toggle("hidden");
-      });
-    </script>
   </body>
 </html>
