@@ -7,12 +7,13 @@
     "start": "node server.js",
     "tw:build": "tailwindcss build -i ./public/css/tailwind.css -o ./public/css/main.css"
   },
-  "author": "Honer Mina",
+  "author": "Mark Anthony Sebastian",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "daisyui": "^4.12.13",
+    "ejs": "^3.1.10",
     "express": "^4.21.0"
   },
   "devDependencies": {

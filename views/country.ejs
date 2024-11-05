@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Details</title>
+    <link href="/css/main.css" rel="stylesheet" />
+  </head>
+  <body tabindex="-1">
+    <%- include('partials/navbar', {page: ''}) %>
+    <div class="container mx-auto">
+      <!-- Hero Section -->
+      <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold"><%= country.commonName %></h1>
+            <p class="py-6">Below, you will find detailed information about the country: <%= country.commonName %></p>
+          </div>
+        </div>
+      </div>
+      <!-- Responsive Grid -->
+      <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <!-- Left Column: Flag -->
+        <div class="overflow-hidden" style="width: 450px; height: 250px;">
+          <img src="<%= country.flag %>" alt="Flag" class="w-full h-full object-contain" />
+        </div>        
+        <!-- Right Column: Details -->
+        <div>
+          <p><strong>Official Name:</strong> <%= country.officialName %></p>
+          <p><strong>Native Name:</strong> <%= country.nativeName %></p>
+          <p>
+            <br><strong>Coat of Arms:</strong>  &nbsp;&nbsp;
+            <img src="<%= country.coatOfArms %>" alt="Coat of Arms" class="h-12" style="display: inline; height: 12;" />
+          </p>   
+          <br>       
+          <p><strong>Country Code (ID):</strong> <%= country.id %></p>
+          <p><strong>Capital:</strong> <%= country.capital %></p>
+          <p><strong>Population:</strong> <%= (country.population).toLocaleString() %> </p>
+          <p><strong>Area:</strong> <%= (country.area).toLocaleString() %> km²</p>
+          <p><strong>Currencies:</strong> <%= country.currencies %></p>
+          <p><strong>Region:</strong> <%= country.region %></p>
+          <p><strong>SubRegion:</strong> <%= country.subRegion %></p>
+          <span class="font-bold">On OpenStreetMap: </span>
+              <a href="<%= country.openStreetMaps %>" class="btn btn-primary mt-2 btn-xs" target="_blank"><%= country.commonName %></a> <br />
+          <p><script>
+            document.addEventListener("DOMContentLoaded", () => {
+              fetch("https://quotable.io/random")
+                .then(response => response.json())
+                .then(data => {
+                  const quoteElement = document.createElement("p");
+                  quoteElement.innerHTML = `<strong>${data.content}</strong> - ${data.author}`;
+                  document.body.appendChild(quoteElement);
+                })
+                .catch(error => console.error("Error fetching the quote:", error));
+            });
+          </script></p>
+          <p><br><a href="#" onclick="history.back(); return false;" class="btn btn-primary btn-xs">Return</a></p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch("https://quotable.io/random")
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById("quote").innerHTML = `"${data.content}" - ${data.author}`;
+          });
+      });
+    </script>
+  </body>
+</html>
+

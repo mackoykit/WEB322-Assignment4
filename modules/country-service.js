@@ -6,18 +6,15 @@
  *
  *  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
  *
- *  Name: ____Honer Mina____ Student ID: ___142518232___ Date: _____30/09/2024___
+ *  Name: Mark Anthony Sebastian Student ID: 140566225 Date: 11/05/2024
  *
  ********************************************************************************/
-
-// country-service.js
 
 const countryData = require("../data/countryData");
 const subRegionData = require("../data/subRegionData");
 
 let countries = [];
 
-// Initialize function to populate countries array
 function initialize() {
   return new Promise((resolve, reject) => {
     try {

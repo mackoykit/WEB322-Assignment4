@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Countries</title>
+</head>
+<body>
+    <%- include('partials/navbar', {page: '/countries'}) %>
+
+    <div class="container mx-auto">
+        <div class="hero bg-base-200 rounded-lg p-6">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold text-purple-600">Countries</h1>
+                    <p class="py-6">
+                        Browse all UN countries. Click the region | sub-region to filter by [sub-]regions such as:
+                        <a href="/countries?region=Africa" class="btn btn-primary bg-purple-600 hover:bg-purple-700 mt-2 btn-xs">Africa</a>
+                        <a href="/countries?region=Americas" class="btn btn-primary bg-purple-600 hover:bg-purple-700 mt-2 btn-xs">Americas</a>
+                        <a href="/countries?region=Asia" class="btn btn-primary bg-purple-600 hover:bg-purple-700 mt-2 btn-xs">Asia</a>
+                        <a href="/countries?region=Europe" class="btn btn-primary bg-purple-600 hover:bg-purple-700 mt-2 btn-xs">Europe</a>
+                        <a href="/countries?region=Oceania" class="btn btn-primary bg-purple-600 hover:bg-purple-700 mt-2 btn-xs">Oceania</a>
+                        <a href="/countries?subRegion=North America" class="btn btn-primary bg-purple-600 hover:bg-purple-700 mt-2 btn-xs">North America</a>
+                        <a href="/countries?subRegion=Eastern Asia" class="btn btn-primary bg-purple-600 hover:bg-purple-700 mt-2 btn-xs">Eastern Asia</a>
+                        <a href="/countries?subRegion=Southern Africa" class="btn btn-primary bg-purple-600 hover:bg-purple-700 mt-2 btn-xs">Southern Africa</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <div class="overflow-x-auto">
+      <table class="table table-zebra">
+        <tbody>
+          <% countries.forEach(country => { %> 
+            <tr>
+              <td>      
+                <img src="<%= country.flag %>" alt="flag" class="h-32 rounded-lg m-3">                                     
+              </td>             
+              <td>
+                <div class="avatar-group -space-x-6 rtl:space-x-reverse">
+                  <div class="avatar">
+                    <div class="w-12">
+                      <img src="<%= country.coatOfArms %>" class="object-contain w-full h-full" />
+                    </div>
+                  </div>                                          
+              </td>
+              <td>
+                <strong><%= country.commonName %>
+                <% if (country.commonName !== country.nativeName) { %>
+                  (<%= country.nativeName %>)
+                <% } %></strong>
+              </td> 
+              <td>
+                <span><a href="/countries?region=<%= encodeURIComponent(country.region) %>" class="btn btn-primary mt-2 btn-xs"><%= country.region %></a> | 
+                <a href="/countries?subRegion=<%= encodeURIComponent(country.subRegion) %>" class="btn btn-primary mt-2 btn-xs"><%= country.subRegion %></a></span>
+              </td>
+              <td><span class="font-bold">Capital: </span>
+                <%= country.capital %></td>
+                <td style="white-space: nowrap;">
+                  <span class="font-bold">Population:</span>
+                  <%= (country.population).toLocaleString() %> <br>
+                  <span class="font-bold">Area:</span>
+                  <%= (country.area).toLocaleString() %> km²
+                </td>             
+              <td><a href="/countries/<%= country.id %>" class="btn btn-primary mt-2 btn-xs">Details</a></td>
+            </tr>
+            <% }); %>                          
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </body>
+</html>
