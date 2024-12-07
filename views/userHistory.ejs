@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User History</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body tabindex="-1">
+    <%- include('partials/navbar', { page: '/login' }) %>
+
+    <div class="container mx-auto p-4">
+        <div class="hero bg-base-200 rounded-lg p-6">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold"><%= session.user.userName %></h1>
+                    <p class="py-6">User History: <%= session.user.email %></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6">
+            <div class="overflow-x-auto">
+                <table class="table table-zebra w-full">
+                    <thead>
+                        <tr>
+                            <th class="text-left p-4">Login Date/Time</th>
+                            <th class="text-left p-4">Client Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% session.user.loginHistory.forEach(function(history) { %>
+                            <tr>
+                              <td class="p-4">
+                                <%= new Date(history.dateTime).toDateString() + " - " + 
+                                    new Date(history.dateTime).toTimeString().split(' ')[0] + " " + 
+                                    new Date(history.dateTime).toTimeString().split(' ').slice(1).join(' ') 
+                                %>
+                            </td>
+                            
+                                <td class="p-4"><%= history.userAgent %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

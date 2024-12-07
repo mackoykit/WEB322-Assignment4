@@ -1,5 +1,5 @@
 /********************************************************************************
- *  WEB322 – Assignment 05
+ *  WEB322 – Assignment 06
  *
  *  I declare that this assignment is my own work in accordance with Seneca's
  *  Academic Integrity Policy:
@@ -9,7 +9,7 @@
  *  Name: Mark Anthony Sebastian Student ID: 140566225 Date: 11/05/2024
  *
  ********************************************************************************/
-
+require("pg");
 require('dotenv').config();
 const Sequelize = require('sequelize');
 
